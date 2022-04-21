@@ -1,0 +1,15 @@
+@import "tipografia";
+@import "estructura";
+
+
+#galeria img {
+    width: 100%;
+}
+
+#galeria .col-lg-4 {
+  padding: 20px
+}
+
+.imagenes_bordes {
+    border-radius: 1cm;
+}
