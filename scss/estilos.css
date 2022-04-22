@@ -1,16 +1,20 @@
 * {
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Open Sans', sans-serif;
+}
 
 .destacado {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 * {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+}
 
 a:hover {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .redes a {
   display: block;
@@ -20,7 +24,8 @@ a:hover {
   height: 55px;
   line-height: 55px;
   text-align: center;
-  margin: 5p; }
+  margin: 5p;
+}
 
 .containterr {
   grid-area: redes;
@@ -30,17 +35,22 @@ a:hover {
   background-color: #998774;
   border-radius: 1cm;
   font-size: 30px;
-  z-index: 1; }
+  z-index: 1;
+}
 
 #galeria img {
-  width: 100%; }
+  width: 100%;
+}
 
 #galeria .col-lg-4 {
-  padding: 10px; }
+  padding: 10px;
+}
 
 .imagenes_bordes {
-  border-radius: 1cm; }
+  border-radius: 1cm;
+}
 
 .videomedia {
   border-radius: .7cm;
-  color: none; }
+}
+/*# sourceMappingURL=estilos.css.map */
