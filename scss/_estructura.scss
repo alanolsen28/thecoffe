@@ -1,4 +1,10 @@
-$bg-color-primary : #998774;
+$colores: (
+    $bg-color-primary : #998774);
+    
+$color-secundary : #1D2526;
+
+$size: (width: 55px,
+    height: 55px,);
 
 * {
     margin: 0;
@@ -6,20 +12,24 @@ $bg-color-primary : #998774;
     scroll-behavior: smooth;
 }
 
+$widh: map-get($size, width);
+$colores : map-get ($colores, $bg-color-primary);
+ 
+
+
 a:hover {
     cursor: pointer;
 }
 
 .redes a {
-
     display: block;
     text-decoration: none;
-    color: #1D2526;
-    width: 55px;
+    color: $color-secundary;
+    width: $widh;
     height: 55px;
     line-height: 55px;
     text-align: center;
-    margin: 5p
+    margin: 5p;
 }
 
 .containterr {
@@ -27,7 +37,8 @@ a:hover {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: $bg-color-primary;
+    background-color: $colores;
     border-radius: 1cm;
     font-size: 30px;
-    z-index: 1;}
+    z-index: 1;
+}
