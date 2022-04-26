@@ -1,0 +1,46 @@
+* {
+  font-family: 'Open Sans', sans-serif; }
+
+.destacado {
+  font-weight: bold; }
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth; }
+
+a:hover {
+  cursor: pointer; }
+
+.redes a {
+  display: block;
+  text-decoration: none;
+  color: #1D2526;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  margin: 5p; }
+
+.containterr {
+  grid-area: redes;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #998774;
+  border-radius: 1cm;
+  font-size: 30px;
+  z-index: 1; }
+
+#galeria img {
+  width: 100%; }
+
+#galeria .col-lg-4 {
+  padding: 10px; }
+
+.imagenes_bordes {
+  border-radius: 1cm; }
+
+.videomedia {
+  border-radius: .7cm;
+  color: none; }
