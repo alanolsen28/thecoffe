@@ -1,14 +1,17 @@
-* {  font-family: 'Nunito', sans-serif;
+* {
+  font-family: 'Nunito', sans-serif;
   font-family: 'Open Sans', sans-serif;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;}
-
+}
 
 .destacado {
   font-weight: bold;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
 
 a:hover {
   cursor: pointer;
@@ -53,13 +56,16 @@ a:hover {
 }
 
 .containterr:hover {
-  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-transition: 1s;
   transition: 1s;
 }
 
 #menu:hover {
-    transform: translateY(-8px);
-    transition: 1s;
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+  -webkit-transition: 1s;
+  transition: 1s;
 }
-
 /*# sourceMappingURL=estilos.css.map */

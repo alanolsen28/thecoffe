@@ -1,20 +1,11 @@
-$colores: (
-    $bg-color-primary : #998774);
-    
+$bg-color-primary : #998774;
 $color-secundary : #1D2526;
-
-$size: (width: 55px,
-    height: 55px,);
 
 * {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
 }
-
-$widh: map-get($size, width);
-$colores : map-get ($colores, $bg-color-primary);
- 
 
 
 a:hover {
@@ -25,7 +16,7 @@ a:hover {
     display: block;
     text-decoration: none;
     color: $color-secundary;
-    width: $widh;
+    width: 55px;
     height: 55px;
     line-height: 55px;
     text-align: center;
@@ -38,7 +29,7 @@ a:hover {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: $colores;
+    background-color: $bg-color-primary;
     border-radius: 1cm;
     font-size: 30px;
     z-index: 1;

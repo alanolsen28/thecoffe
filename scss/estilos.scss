@@ -7,7 +7,7 @@
 }
 
 #galeria .col-lg-4 {
-  padding: 10px
+    padding: 10px
 }
 
 .imagenes_bordes {
@@ -15,9 +15,15 @@
 }
 
 .videomedia {
-    border-radius: .7cm;}
-
-
+    border-radius: .7cm;
+}
+ 
 .containterr:hover {
     transform: translateY(-10px);
+    transition: 1s;
+}
+
+#menu:hover {
+    transform: translateY(-8px);
+    transition: 1s;
 }
