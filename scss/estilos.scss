@@ -1,6 +1,10 @@
 @import "tipografia";
 @import "estructura";
 
+@mixin animaciones {
+    transform: translateY(-8px);
+    transition: 1s;
+}
 
 #galeria img {
     width: 100%;
@@ -19,11 +23,9 @@
 }
  
 .containterr:hover {
-    transform: translateY(-10px);
-    transition: 1s;
+    @include animaciones()
 }
 
 #menu:hover {
-    transform: translateY(-8px);
-    transition: 1s;
+    @include animaciones()
 }
