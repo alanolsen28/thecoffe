@@ -33,7 +33,7 @@ a:hover {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #998774;
+  background-color: #d8a900da;
   border-radius: 1cm;
   font-size: 30px;
   z-index: 1;
@@ -56,7 +56,8 @@ a:hover {
 }
 
 .containterr:hover {
-  -webkit-transform: translateY(-10px);
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
   -webkit-transition: 1s;
   transition: 1s;
 }
