@@ -54,7 +54,6 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-spin1:before { content: '\e830'; } /* '' */
 .icon-instagram:before { content: '\f16d'; } /* '' */
 .icon-whatsapp:before { content: '\f232'; } /* '' */
 .icon-facebook:before { content: '\f308'; } /* '' */
