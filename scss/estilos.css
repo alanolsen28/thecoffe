@@ -1,5 +1,6 @@
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .destacado {
@@ -32,10 +33,15 @@ a:hover {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #c3aa4fd0;
+  background-color: #b79350d0;
   border-radius: 1cm;
   font-size: 30px;
   z-index: 100000;
+}
+
+.carousell {
+  width: 100%;
+  height: 500px;
 }
 
 #galeria img {
@@ -66,5 +72,13 @@ a:hover {
           transform: translateY(-8px);
   -webkit-transition: 1s;
   transition: 1s;
+}
+
+.fondo:hover {
+  background-color: rgba(208, 209, 124, 0.315);
+  border-radius: 5cm;
+  -webkit-transition: 1s;
+  transition: 1s;
+  padding: 2cm;
 }
 /*# sourceMappingURL=estilos.css.map */
