@@ -10,7 +10,7 @@ alert("Welcome " + usuario)
 
 let cantidadDeCafes = prompt(usuario + " ¿Cuantos Cafes Queres? Maximo 4 por pedido");
 
-parseInt(cantidadDeCafes)
+ parseInt(cantidadDeCafes)
 
 while (cantidadDeCafes == 0 || cantidadDeCafes > 4) {
     cantidadDeCafes = prompt(usuario + " ¿Cuantos Cafes Queres? Maximo 4 por pedido");
