@@ -6,18 +6,27 @@ let apellidoDeUsuario = prompt("Apellido");
 
 let usuario = (nombreDeUsuario + " " + apellidoDeUsuario)
 
-alert("Welcome" + " " + usuario)
+alert("Welcome " + usuario)
 
-let cantidadDeCafes = prompt(usuario + " " + "¿Cuantos Cafes Queres? Maximo 4 por pedido");
+let cantidadDeCafes = prompt(usuario + " ¿Cuantos Cafes Queres? Maximo 4 por pedido");
 
-if (cantidadDeCafes == 1) {
-    alert("El total es 200$ " + (nombreDeUsuario + "" +apellidoDeUsuario))
-} else if (cantidadDeCafes == 2) {
-    alert("El total es 400$" + (nombreDeUsuario + apellidoDeUsuario))
-} else if (cantidadDeCafes == 3) {
-    alert("El total es 600$" + (nombreDeUsuario + apellidoDeUsuario))
-} else if (cantidadDeCafes == 4) {
-    alert("El total es 800$" + (nombreDeUsuario + apellidoDeUsuario))
+parseInt(cantidadDeCafes)
+
+while (cantidadDeCafes == 0 || cantidadDeCafes > 4) {
+    cantidadDeCafes = prompt(usuario + " ¿Cuantos Cafes Queres? Maximo 4 por pedido");
 }
 
-alert(`Gracias por tu Compra,${usuario}`);
+if (cantidadDeCafes == 1) {
+    alert("El total es 200$," + " " + usuario)
+} else if (cantidadDeCafes == 2) {
+    alert("El total es 400$," + " " + usuario)
+} else if (cantidadDeCafes == 3) {
+    alert("El total es 600$," + " " + usuario)
+} else if (cantidadDeCafes == 4) {
+    alert("El total es 800$," + " " + usuario)
+} else {
+    alert("Compra rechazada")
+}
+
+alert(`Gracias ,${usuario}`);
+
