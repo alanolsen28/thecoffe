@@ -1,32 +1,51 @@
-let bienvenida = alert("Bienvendios a The Coffe Store")
+function suma(num1, num2) {
+    let total = num1 + num2;
+    alert("el total es = " + total)
+}
+
+function multiplicar(num1, num2) {
+    let total = num1 * num2;
+    alert("el total es = " + total)
+}
+
+function saludar() {
+    alert("Welcome " + usuario)
+};
+
+alert("Bienvendios a The Coffe Store");
 
 let nombreDeUsuario = prompt("Nombre");
 
 let apellidoDeUsuario = prompt("Apellido");
 
-let usuario = (nombreDeUsuario + " " + apellidoDeUsuario)
+let usuario = (nombreDeUsuario + " " + apellidoDeUsuario);
 
-alert("Welcome " + usuario)
+saludar();
 
-let cantidadDeCafes = prompt(usuario + " ¿Cuantos Cafes Queres? Maximo 4 por pedido");
+// cafe
 
- parseInt(cantidadDeCafes)
+const cafe = 400;
 
-while (cantidadDeCafes == 0 || cantidadDeCafes > 4) {
-    cantidadDeCafes = prompt(usuario + " ¿Cuantos Cafes Queres? Maximo 4 por pedido");
+let cantidadCafe = parseInt(prompt(usuario + " ¿Cuantos Cafes Queres?"));
+
+let resultado = multiplicar(cantidadCafe, cafe);
+
+// extra
+
+const torta = 300
+const budin = 200
+const cookie = 100
+
+let extra = prompt(usuario + " ¿Quieres sumarle un extra? Hay torta, budin y cookie?");
+
+if (extra === "torta") {
+    alert("el total es " + (multiplicar(extra, torta)))
 }
-
-if (cantidadDeCafes == 1) {
-    alert("El total es 200$," + " " + usuario)
-} else if (cantidadDeCafes == 2) {
-    alert("El total es 400$," + " " + usuario)
-} else if (cantidadDeCafes == 3) {
-    alert("El total es 600$," + " " + usuario)
-} else if (cantidadDeCafes == 4) {
-    alert("El total es 800$," + " " + usuario)
-} else {
-    alert("Compra rechazada")
+else if (extra === "budin") {
+    alert("el total es " + (resultado + budin))
 }
-
-alert(`Gracias ,${usuario}`);
+else if (extra === "cookie") {
+    alert("el total es " + (resultado + cookie))
+}
+else {alert("El total es" + resultado)}
 
