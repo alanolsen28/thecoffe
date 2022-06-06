@@ -1,11 +1,11 @@
 function suma(num1, num2) {
     let total = num1 + num2;
-    alert("el total es = " + total)
+    return totalFinal
 }
 
 function multiplicar(num1, num2) {
     let total = num1 * num2;
-    alert("el total es = " + total)
+    return total
 }
 
 function saludar() {
@@ -28,7 +28,9 @@ const cafe = 400;
 
 let cantidadCafe = parseInt(prompt(usuario + " ¿Cuantos Cafes Queres?"));
 
-let resultado = multiplicar(cantidadCafe, cafe);
+let total = multiplicar(cantidadCafe, cafe);
+
+alert("El total es "+ total)
 
 // extra
 
@@ -38,14 +40,18 @@ const cookie = 100
 
 let extra = prompt(usuario + " ¿Quieres sumarle un extra? Hay torta, budin y cookie?");
 
-if (extra === "torta") {
-    alert("el total es " + (multiplicar(extra, torta)))
+if (extra === "no") {
+    alert("El total es" + total)    
+}
+else if (extra === "torta") {
+    alert("el total es " + (total + torta))
 }
 else if (extra === "budin") {
-    alert("el total es " + (resultado + budin))
+    alert("el total es " + (total + budin))
 }
 else if (extra === "cookie") {
-    alert("el total es " + (resultado + cookie))
+    alert("el total es " + (total + cookie))
 }
-else {alert("El total es" + resultado)}
+else {alert("El total es" + total)}
 
+alert ("Gracias por comprar con nosotros")
