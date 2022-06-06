@@ -41,7 +41,7 @@ const cookie = 100
 let extra = prompt(usuario + " ¿Quieres sumarle un extra? Hay torta, budin y cookie?");
 
 if (extra === "no") {
-    alert("El total es" + total)    
+    alert("El total es " + total)    
 }
 else if (extra === "torta") {
     alert("el total es " + (total + torta))
@@ -52,6 +52,6 @@ else if (extra === "budin") {
 else if (extra === "cookie") {
     alert("el total es " + (total + cookie))
 }
-else {alert("El total es" + total)}
+else {alert("El total es " + total)}
 
 alert ("Gracias por comprar con nosotros")
