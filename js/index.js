@@ -4,8 +4,9 @@ class Producto {
         this.precio = precio
 
     }
-    mostrarProducto() { 
-        
+
+    mostrarProducto() {
+        return this.nombre;
     }
 }
 
@@ -24,8 +25,8 @@ class DetallePedido {
         let subtotal = this.producto.precio * this.cantidad
         return subtotal;
     }
-    mostrarDetalle(){
-        return this.cantidad + this.cantidad
+    mostrarDetalle() {
+        return " " + this.cantidad + "x" + this.producto.mostrarProducto()
     }
 
 }
@@ -47,11 +48,16 @@ class Pedido {
         }
         return total
     }
-    mostrarPedido(){
+    mostrarPedido() {
+        let ticket = ""
+        for (const dp of this.detalles) {
+            ticket = ticket + dp.mostrarDetalle() + " ";
+        }
+        ticket += this.calcularTotal()
+        return ticket;
+
     }
 }
-
-
 const lista = []
 lista.push(detallePedido1);
 lista.push(detallePedido2);
@@ -59,7 +65,7 @@ lista.push(detallePedido3);
 
 const pedido1 = new Pedido(lista);
 
-console.log(pedido1.calcularTotal());
+console.log(pedido1.mostrarPedido());
 
 
 /////////////////////////////////////////////////////////////////
@@ -125,4 +131,3 @@ console.log(pedido1.calcularTotal());
 
 
 // alert("Gracias por comprar con nosotros")
-
