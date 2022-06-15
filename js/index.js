@@ -114,7 +114,7 @@ let cantidad = parseInt(prompt("Cuantos queres?"))
 
 for (let p of productos) {
     if (p.id == opcion) {
-        alert("Elegiste $" + p.nombre + (cantidad * p.precio) + )
+        alert("Elegiste $" + p.nombre + (cantidad * p.precio))
     }
 }
 
