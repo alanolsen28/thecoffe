@@ -37,7 +37,7 @@ const productos = [{
 },
 {
     id: 7,
-    nombre: "Rumorosa",
+    nombre: "Special",
     precio: 700,
     img: "../imagenes/imagenes_menu/7.jpg"
 },
