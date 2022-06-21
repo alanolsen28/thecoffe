@@ -8,7 +8,7 @@ for (let p of productos) {
           <div class="card-body">
           <h5 class="card-title">${p.nombre}</h5>
            <p class="card-text">$ ${p.precio}</p>
-           <button class="btn btn-lg shadow destacado agregarCarrito" type="submit"
+           <button onclick="agregar()" class="btn btn-lg shadow destacado agregarCarrito" type="submit"
            style="background-color:#998774;">COMPRAR</button>
       </div>
   `
@@ -17,12 +17,5 @@ for (let p of productos) {
 
 let cart = []
 
-const btn = document.querySelector(".agregarCarrito");
-
-btn.addEventListener("click", () => {
-  cart.push(productos)
-  alert("Agregaste " + productos.nombre + " al carrito")
-})
-
-
-
+agregar = () => { cart.push(productos) 
+  alert("Agregaste " + productos.nombre + " al carrito");}
