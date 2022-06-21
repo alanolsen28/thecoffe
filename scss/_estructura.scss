@@ -1,4 +1,4 @@
-$bg-color-primary : #b79350d0;
+$bg-color-primary : #7e5d20d0;
 $color-secundary : #1D2526;
 
 * {
@@ -39,3 +39,17 @@ a:hover {
 .carousell {
     width: 100%; 
     height: 500px;}
+
+
+.carritoDeCompras {
+        background-color: $bg-color-primary;
+    }
+
+.carritoDeCompras :hover{
+        background-color: #ffffff;
+        transition: .5s;
+    }    
+
+.subrayado {
+    text-decoration: none;
+}

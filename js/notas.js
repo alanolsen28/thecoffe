@@ -59,7 +59,6 @@
 
 // getAttribute ()
 
-// setAttribute () 
 
 // COMANDOS
 
@@ -70,3 +69,7 @@
 // append()
 
 
+obetencion de MediaElementAudioSourceNode
+
+textContent - devuelve el textContent
+innerHTML devuelve el contenido de un elemento

@@ -1,6 +1,8 @@
 const cont = document.querySelector("#cont");
 
-for(let p of productos){
+let cart = []
+
+for (let p of productos) {
   cont.innerHTML += `
       <div class="col-sm-3">
           <div class="card bg-dark text-light m-1">
@@ -8,11 +10,21 @@ for(let p of productos){
           <div class="card-body">
           <h5 class="card-title">"${p.nombre}"</h5>
            <p class="card-text">"${p.precio}"</p>
-           <button class="btn btn-lg shadow destacado" type="submit"
+           <button class="btn btn-lg shadow destacado agregarCarrito" type="submit"
            style="background-color:#998774;">COMPRAR</button>
       </div>
   `
-}
+
+} 
+
+const btn = document.querySelector(".agregarCarrito")
+
+btn.addEventListener("click", function () {
+      cart.push(productos)
+      alert("Agregaste " + productos.nombre + " al carrito") })
+
+
+
 
 
 // function saludar() {
@@ -115,7 +127,7 @@ for(let p of productos){
 
 
 
-         
+
 //     }
 
 //     buyButton.addEventListener("click", function() {
@@ -133,7 +145,7 @@ for(let p of productos){
 
 
 
-{/* <section id="showProductsCart">
+/* <section id="showProductsCart">
 <div class="container-xl text-center" id="showCart">
   <div id="row"> 
     <div id="col">
@@ -156,4 +168,4 @@ for(let p of productos){
                 <a href="#" class="btn btn-primary">COMPRAR</a>
               </div>
             </div>
-          </div> */}
+          </div> */

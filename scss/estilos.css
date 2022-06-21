@@ -33,7 +33,7 @@ a:hover {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #685b4ece;
+  background-color: #7e5d20d0;
   border-radius: 1cm;
   font-size: 30px;
   z-index: 100000;
@@ -42,6 +42,20 @@ a:hover {
 .carousell {
   width: 100%;
   height: 500px;
+}
+
+.carritoDeCompras {
+  background-color: #7e5d20d0;
+}
+
+.carritoDeCompras :hover {
+  background-color: #ffffff;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.subrayado {
+  text-decoration: none;
 }
 
 #galeria img {
@@ -79,6 +93,5 @@ a:hover {
   border-radius: 5cm;
   -webkit-transition: 1s;
   transition: 1s;
-  padding: 2cm;
 }
 /*# sourceMappingURL=estilos.css.map */
