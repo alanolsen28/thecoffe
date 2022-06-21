@@ -15,7 +15,7 @@ a:hover {
 .redes a {
   display: block;
   text-decoration: none;
-  color: #1D2526;
+  color: #998774;
   width: 55px;
   height: 55px;
   line-height: 55px;
@@ -44,3 +44,4 @@ a:hover {
 .videomedia {
   border-radius: .7cm;
   color: none; }
+

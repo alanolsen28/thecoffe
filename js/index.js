@@ -1,168 +1,159 @@
-// class Producto {
-//     constructor(nombre, precio) {
-//         this.nombre = nombre
-//         this.precio = precio
+const cont = document.querySelector("#cont");
 
-//     }
-
-//     mostrarProducto() {
-//         return this.nombre;
-//     }
-// }
-
-// const producto1 = new Producto("cafe", 500);
-// const producto2 = new Producto("torta", 200);
-// const producto3 = new Producto("cookie", 100);
-
-// ////
-
-// class DetallePedido {
-//     constructor(producto, cantidad) {
-//         this.producto = producto
-//         this.cantidad = cantidad
-//     }
-//     calcularSubtotal() {
-//         let subtotal = this.producto.precio * this.cantidad
-//         return subtotal;
-//     }
-//     mostrarDetalle() {
-//         return " " + this.cantidad + "x" + this.producto.mostrarProducto()
-//     }
-
-// }
-
-// const detallePedido1 = new DetallePedido(producto1, 2);
-// const detallePedido2 = new DetallePedido(producto2, 1);
-// const detallePedido3 = new DetallePedido(producto3, 3);
-
-// //////
-
-// class Pedido {
-//     constructor(detalles) {
-//         this.detalles = detalles;
-//     }
-//     calcularTotal() {
-//         let total = 0
-//         for (const dp of this.detalles) {
-//             total = total + dp.calcularSubtotal();
-//         }
-//         return total
-//     }
-//     mostrarPedido() {
-//         let ticket = ""
-//         for (const dp of this.detalles) {
-//             ticket = ticket + dp.mostrarDetalle() + " ";
-//         }
-//         ticket += this.calcularTotal()
-//         return ticket;
-
-//     }
-// }
-// const lista = []
-// lista.push(detallePedido1);
-// lista.push(detallePedido2);
-// lista.push(detallePedido3);
-
-// const pedido1 = new Pedido(lista);
-
-// console.log(pedido1.mostrarPedido());
-
-
-
-// DESAFIO 1 / 2
-
-function multiplicar(num1, num2) {
-    let total = num1 * num2;
-    return total
+for(let p of productos){
+  cont.innerHTML += `
+      <div class="col-sm-3">
+          <div class="card bg-dark text-light m-1">
+          <img class="card-img-top" src="${p.img}" alt="">
+          <div class="card-body">
+          <h5 class="card-title">"${p.nombre}"</h5>
+           <p class="card-text">"${p.precio}"</p>
+           <button class="btn btn-lg shadow destacado" type="submit"
+           style="background-color:#998774;">COMPRAR</button>
+      </div>
+  `
 }
 
-function saludar() {
-    alert("Welcome " + usuario)
-};
 
-alert("Bienvendios a The Coffe Store");
-
-let nombreDeUsuario = prompt("Nombre");
-
-let apellidoDeUsuario = prompt("Apellido");
-
-let usuario = (nombreDeUsuario + " " + apellidoDeUsuario);
-
-saludar();
-
-let productos = []
-
-class Producto {
-    constructor(id, nombre, precio) {
-        this.id = id
-        this.nombre = nombre
-        this.precio = precio
-    }
-       
-}
-
-const producto1 = new Producto(1, "Cafe ", 500);
-const producto2 = new Producto(2, "Torta ", 200);
-const producto3 = new Producto(3, "Cookie ", 100);
-
-productos.push(producto1);
-productos.push(producto2);
-productos.push(producto3);
-
-let opcion = parseInt(prompt("Que opcion queres elegri?  1) Cafe,  2) Torta,  3) Cookie"))
-let cantidad = parseInt(prompt("Cuantos queres?"))
-
-for (let p of productos) {
-    if (p.id == opcion) {
-        alert("Elegiste $" + p.nombre + (cantidad * p.precio))
-    }
-}
-
-alert("Gracias por comprar con nosotros " + usuario)
-
-
-// let cantidadCafe = parseInt(prompt(usuario + " ¿Cuantos Cafes Queres?"));
-
-// while (cantidadCafe <= 0) {
-//     cantidadCafe = parseInt(prompt(usuario + " ¿Cuantos Cafes Queres?"))
+// function saludar() {
+//     alert("Welcome " + usuario)
 // };
+// alert("Bienvendios a The Coffe Store");
+// let nombreDeUsuario = prompt("Nombre");
+// let apellidoDeUsuario = prompt("Apellido");
+// let usuario = (nombreDeUsuario + " " + apellidoDeUsuario);
+// saludar();
 
-// let total = multiplicar(cantidadCafe, cafe);
+// const productos = [{
+//         id: 1,
+//         nombre: "Cafe",
+//         precio: 600
+//     },
+//     {
+//         id: 2,
+//         nombre: "Torta",
+//         precio: 500
+//     },
+//     {
+//         id: 3,
+//         nombre: "Cookie",
+//         precio: 100
+//     }
+// ]
 
-// alert("El total es " + total)
+// const pedirProducto = () => {
 
-// // extra
+//     let keyProducto = parseInt(prompt("Ingrese el número de producto que quiere:\n1) Cafe \n2) Torta \n3) Cookie "));
 
-// const torta = 300
-// const budin = 200
-// const cookie = 100
+//     while (keyProducto <= 0) {
+//         keyProducto = parseInt(prompt(usuario + " Ingrese el número de producto que quiere:\n1) Cafe \n2) Torta \n3) Cookie"))
+//     };
 
-// let extra = prompt(usuario + " ¿Quieres sumarle un extra? Hay torta, budin y cookie?");
+//     let cantidad = parseInt(prompt("Ingrese la cantidad que desea comprar:"));
 
+//     while (cantidad <= 0) {
+//         cantidad = parseInt(prompt(usuario + " Ingrese la cantidad que desea comprar:"))
+//     };
 
-// while (extra != "no" && extra != "torta" && extra != "budin" && extra != "cookie") {
-//     extra = prompt("Opcion equivocada " + usuario + " ¿Quieres sumarle un extra? Hay torta, budin y cookie?");
+//     alert("Su total es : $" + (productos.find((p) => p id === keyProducto).precio * cantidad));
+
 // }
 
-// if (extra === "no") {
-//     alert("El total es " + total)
-// } else if (extra === "torta") {
-//     alert("el total es " + (total + torta))
-// } else if (extra === "budin") {
-//     alert("el total es " + (total + budin))
-// } else if (extra === "cookie") {
-//     alert("el total es " + (total + cookie))
-// } else {
-//     alert("El total es " + total)
+// pedirProducto();
+
+
+// alert("Gracias por comprar con nosotros " + usuario)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let showProductsCart = document.getElementById("showProductsCart")
+// let showCart = document.getElementById("showCart")
+// let row = document.getElementById("row")
+// let col = document.getElementById("col")
+// let card = document.getElementById("card")
+// let cardBody = document.getElementById("card-body")
+
+
+// let cart = []
+
+// function mostrarProductos() {
+//     productos.forEach((product) => {
+//          let card = document.createElement(div)
+//          card.innerHTML += ''
+
+
+
+
+
+
+
+
+
+
+         
+//     }
+
+//     buyButton.addEventListener("click", function() {
+//         cart.push(product)
+//         alert("Agregaste " + product.name + " al carrito")
+//         div.innerHTML
+//         showCart( )
+//     })
 // }
 
 
-// alert("Gracias por comprar con nosotros")
+//boton de agregar a carrito
 
 
 
 
 
-// tarea usar find//filter//map
+{/* <section id="showProductsCart">
+<div class="container-xl text-center" id="showCart">
+  <div id="row"> 
+    <div id="col">
+      <div id="card">
+        <div id="card-body">
+        </div>
+      </div>
+    </div>
+  </div>
 
-// 
+
+
+<div class="row m-1">
+          <div class="col-sm-3">
+            <div class="card bg-dark text-light m-1" style="width: 18rem;" >
+              <img src="../imagenes/imagenes_menu/1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Espresso</h5>
+                <p class="card-text">500</p>
+                <a href="#" class="btn btn-primary">COMPRAR</a>
+              </div>
+            </div>
+          </div> */}
