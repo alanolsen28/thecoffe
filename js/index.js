@@ -1,3 +1,5 @@
+
+
 const cont = document.querySelector("#cont");
 
 for (let p of productos) {
@@ -16,6 +18,10 @@ for (let p of productos) {
 }
 
 let cart = []
+console.log(cart);
 
-agregar = () => { cart.push(productos) 
-  alert("Agregaste " + productos.nombre + " al carrito");}
+for (let p of productos) {
+  agregar = () => { cart.push(p) 
+  alert("Agregaste " + p.nombre + "$" + p.precio + " al carrito");}
+}
+
