@@ -58,6 +58,10 @@ a:hover {
   text-decoration: none;
 }
 
+.aCarrito {
+  background-color: #998774;
+}
+
 #galeria img {
   width: 100%;
 }
@@ -93,5 +97,9 @@ a:hover {
   border-radius: 5cm;
   -webkit-transition: 1s;
   transition: 1s;
+}
+
+.aCarrito {
+  background-color: #998774;
 }
 /*# sourceMappingURL=estilos.css.map */
