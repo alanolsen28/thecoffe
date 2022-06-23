@@ -20,7 +20,10 @@ for (let prod of productos) {
 
 const cart = []
 
+
 const aCarrito = document.getElementsByClassName(`aCarrito`)
+
+const totale = document.getElementById(`total`)
 
 
 for (let p of aCarrito) {
@@ -33,21 +36,32 @@ for (let p of aCarrito) {
 
     renderCart();
 
+    const total = cart.map((item) => item.precio).reduce((valor1, valor2) => valor1 + valor2, 0) 
+    
+    totale.innerText = `El total es : $${total}`;
+    
+
+
   });
 }
+
+// FUNCIONES
+
 
 
 function findAndAddProd(id) {
 
-const produ = productos.find ( produ => {
-  return produ.nombre === id;
-})
+  const produ = productos.find(produ => {
+    return produ.nombre === id;
+  })
 
-cart.push(produ)
+  cart.push(produ)
 
-console.log(cart);
+  console.log(cart);
 
 }
+
+//
 
 const detalleDeCompra = document.getElementById('detalleDeCompra')
 
@@ -57,11 +71,11 @@ function renderCart() {
 
   for (let item of cart) {
 
-  const cardCarrito = document.createElement('div');
+    const cardCarrito = document.createElement('div');
 
-  cardCarrito.classList.add('col-12');
+    cardCarrito.classList.add('col-12');
 
-  cardCarrito.innerHTML = `
+    cardCarrito.innerHTML += `
   <div class="col-sm-3">
       <div class="card bg-dark text-light m-1" style="width: 5rem;">
       <img class="card-img-top" src="${item.img}" alt="">
@@ -71,7 +85,8 @@ function renderCart() {
   </div>
   </div>
   `
+    detalleDeCompra.appendChild(cardCarrito)
 
-  detalleDeCompra.appendChild(cardCarrito)
+  }
+}
 
-}}
