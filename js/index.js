@@ -23,7 +23,7 @@ const cart = []
 
 const aCarrito = document.getElementsByClassName(`aCarrito`)
 
-const totale = document.getElementById(`total`)
+const totalPP = document.getElementById(`total`)
 
 
 for (let p of aCarrito) {
@@ -38,12 +38,14 @@ for (let p of aCarrito) {
 
     const total = cart.map((item) => item.precio).reduce((valor1, valor2) => valor1 + valor2, 0) 
     
-    totale.innerText = `El total es : $${total}`;
+    totalPP.innerText = `EL TOTAL ES: $${total}`;
     
-
 
   });
 }
+
+localStorage.setItem("carrito", cart);
+
 
 // FUNCIONES
 
@@ -73,11 +75,10 @@ function renderCart() {
 
     const cardCarrito = document.createElement('div');
 
-    cardCarrito.classList.add('col-12');
 
     cardCarrito.innerHTML += `
   <div class="col-sm-3">
-      <div class="card bg-dark text-light m-1" style="width: 5rem;">
+      <div class="card bg-light text-dark m-1" style="width: 5rem;">
       <img class="card-img-top" src="${item.img}" alt="">
       <div class="card-body">
        <p class="card-text">$ ${item.precio}</p>
@@ -89,4 +90,3 @@ function renderCart() {
 
   }
 }
-
