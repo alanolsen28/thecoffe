@@ -42,16 +42,11 @@ for (let p of aCarrito) {
   });
 }
 
- localStorage.getItem("carrito")
+ let storage = JSON.parse(localStorage.getItem("carrito"))
 
-const btnBorrar = document.getElementById(`borrarTodo`)
+ console.log(storage);
 
-  btnBorrar.addEventListener("click", () => {
-   
-  const cart = [] 
-
-   });
-
+ //
 
 
 
