@@ -38,14 +38,36 @@ for (let p of aCarrito) {
     totalPP.innerText = `EL TOTAL ES: $${total}`;
 
     localStorage.setItem("carrito", JSON.stringify(cart));
+
+
  
   });
 }
 
- let storage = JSON.parse(localStorage.getItem("carrito"))
+ const storage = JSON.parse(localStorage.getItem("carrito"))
 
- console.log(storage);
+ const detalleDeCompra = document.getElementById('detalleDeCompra')
 
+ for (let cuco of storage) {
+
+  const cardCarrito = document.createElement('div');
+
+
+  cardCarrito.innerHTML += `
+<div class="col-sm-3">
+    <div class="card bg-light text-dark m-1" style="width: 5rem;">
+    <img class="card-img-top" src="${cuco.img}" alt="">
+    <div class="card-body">
+     <p class="card-text">$ ${cuco.precio}</p>
+</div>
+</div>
+</div>
+`
+  detalleDeCompra.appendChild(cardCarrito)
+
+}
+
+ 
  //
 
 
@@ -66,7 +88,6 @@ function findAndAddProd(id) {
 
 //
 
-const detalleDeCompra = document.getElementById('detalleDeCompra')
 
 function renderCart() {
 
