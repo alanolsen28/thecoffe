@@ -44,11 +44,13 @@ for (let p of aCarrito) {
   });
 }
 
+// LOCAL STORAGE
+
  const storage = JSON.parse(localStorage.getItem("carrito"))
 
  const detalleDeCompra = document.getElementById('detalleDeCompra')
 
- for (let cuco of storage) {
+ for (let storage of storage) {
 
   const cardCarrito = document.createElement('div');
 
@@ -56,9 +58,9 @@ for (let p of aCarrito) {
   cardCarrito.innerHTML += `
 <div class="col-sm-3">
     <div class="card bg-light text-dark m-1" style="width: 5rem;">
-    <img class="card-img-top" src="${cuco.img}" alt="">
+    <img class="card-img-top" src="${storage.img}" alt="">
     <div class="card-body">
-     <p class="card-text">$ ${cuco.precio}</p>
+     <p class="card-text">$ ${storage.precio}</p>
 </div>
 </div>
 </div>
