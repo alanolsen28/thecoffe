@@ -50,17 +50,16 @@ for (let p of aCarrito) {
 
  const detalleDeCompra = document.getElementById('detalleDeCompra')
 
- for (let storage of storage) {
+ for (let f of storage) {
 
   const cardCarrito = document.createElement('div');
-
 
   cardCarrito.innerHTML += `
 <div class="col-sm-3">
     <div class="card bg-light text-dark m-1" style="width: 5rem;">
-    <img class="card-img-top" src="${storage.img}" alt="">
+    <img class="card-img-top" src="${f.img}" alt="">
     <div class="card-body">
-     <p class="card-text">$ ${storage.precio}</p>
+     <p class="card-text">$ ${f.precio}</p>
 </div>
 </div>
 </div>
@@ -69,12 +68,7 @@ for (let p of aCarrito) {
 
 }
 
- 
- //
-
-
-
-// FUNCIONES
+// FUNCIONES DEL CART
 
 function findAndAddProd(id) {
 
@@ -83,6 +77,8 @@ function findAndAddProd(id) {
   })
 
   cart.push(produ)
+
+  localStorage.setItem("carrito", JSON.stringify(cart));
 
   console.log(cart);
 
