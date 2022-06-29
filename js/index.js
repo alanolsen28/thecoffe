@@ -44,6 +44,7 @@ for (let p of aCarrito) {
   });
 }
 
+
 // LOCAL STORAGE
 
  const storage = JSON.parse(localStorage.getItem("carrito"))
@@ -78,8 +79,6 @@ function findAndAddProd(id) {
 
   cart.push(produ)
 
-  localStorage.setItem("carrito", JSON.stringify(cart));
-
   console.log(cart);
 
 }
@@ -94,7 +93,6 @@ function renderCart() {
   for (let item of cart) {
 
     const cardCarrito = document.createElement('div');
- 
 
     cardCarrito.innerHTML += `
   <div class="col-sm-3">
@@ -107,6 +105,8 @@ function renderCart() {
   </div>
   `
     detalleDeCompra.appendChild(cardCarrito)
+
+    localStorage.setItem("carrito", JSON.stringify(item));
 
   }
 }
