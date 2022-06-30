@@ -63,88 +63,80 @@
   </header>
 
   <main>
-    <div class="container-sm">
-      <div class="row mb-3">
-        <div class="col">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          </form>
+      <section>
+        <div class="container-xl text-center">
+          <div class="row m-1" id="cont">
+          </div>
         </div>
-      </div>
-    </div>
-    <section>
-      <div class="container-xl text-center">
-        <div class="row m-1" id="cont">
+      </section>
+      <section class="container text-center bg-dark text-light rounded mb-3">
+        <h1 class="stronge text-center">DETALLE COMPRA:</h1>
+        <div class="row m-1" id="detalleDeCompra">
         </div>
-      </div>
-    </section>
-    <section class="container text-center bg-dark text-light rounded mb-3"> 
-      <h1 class="stronge text-center">DETALLE COMPRA:</h1>
-      <div class="row m-1" id="detalleDeCompra" >
-      </div>
-      <h2 class="row container" id="total">        
-      </h2>
-      <a class="btn btn-primary btn-lg btn-warning shadow destacado m-2" id="borrarTodo">BORRAR TODO</a>
-    </section>
+        <h2 class="row container" id="total">
+        </h2>
+        <button class="btn btn-primary btn-lg btn-warning shadow destacado m-2" id="buttonDeleteCart">BORRAR TODO</a>
+        </button>
+      </section>
 
-    </section>
-    <section class="container-xl">
-      <form action="">
-        <div class="card p-1 rounded bg-dark bg-gradient">
-          <div class="form-floating mb-3 shadow">
-            <input type="text" class="form-control" id="floatingInput">
-            <label for="floatingTextarea">
-              <p>Nombre</p>
-            </label>
+      </section>
+      <section class="container-xl">
+        <form action="">
+          <div class="card p-1 rounded bg-dark bg-gradient">
+            <div class="form-floating mb-3 shadow">
+              <input type="text" class="form-control" id="floatingInput">
+              <label for="floatingTextarea">
+                <p>Nombre</p>
+              </label>
+            </div>
+            <div class="form-floating mb-3 shadow">
+              <input type="text" class="form-control" id="floatingInput">
+              <label for="floatingTextarea">
+                <p>Apellido</p>
+              </label>
+            </div>
+            <div class="form-floating mb-3 shadow">
+              <input type="date" class="form-control" id="floatingInput">
+              <label for="Textarea">
+                <p>Fecha de nacimiento</p>
+              </label>
+            </div>
+            <select class="form-select mb-3 shadow" aria-label="Default select example">
+              <option selected>Sexo</option>
+              <option value="1">Hombre</option>
+              <option value="2">Mujer</option>
+            </select>
+            <div class="form-floating mb-3 shadow">
+              <input type="number" class="form-control" id="floatingInput">
+              <label for="floatingTextarea p-2">Ingresá acá tu Telefono</label>
+            </div>
+            <div class="form-floating mb-3 shadow">
+              <input type="email" class="form-control" id="floatingInput">
+              <label for="floatingTextarea">Ingresá acá tu Email</label>
+            </div>
+            <div class="form-floating mb-3 shadow">
+              <input type="text" class="form-control" id="floatingInput">
+              <label for="floatingTextarea">
+                <p>Direccion</p>
+              </label>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto p-3">
+              <button class="btn btn-primary btn-lg btn-warning shadow destacado" type="submit">REALIZA TU
+                COMPRA</button>
+            </div>
+        </form>
+      </section>
+      <section>
+        <article>
+          <div class="containterr shadow">
+            <div class="redes">
+              <a href="https://www.facebook.com/" target="blanc" class="icon-facebook"></a>
+              <a href="https://www.instagram.com/" target="blanc" class="icon-instagram"></a>
+              <a href="https://www.whatsapp.com/" target="blanc" class="icon-whatsapp"></a>
+            </div>
           </div>
-          <div class="form-floating mb-3 shadow">
-            <input type="text" class="form-control" id="floatingInput">
-            <label for="floatingTextarea">
-              <p>Apellido</p>
-            </label>
-          </div>
-          <div class="form-floating mb-3 shadow">
-            <input type="date" class="form-control" id="floatingInput">
-            <label for="Textarea">
-              <p>Fecha de nacimiento</p>
-            </label>
-          </div>
-          <select class="form-select mb-3 shadow" aria-label="Default select example">
-            <option selected>Sexo</option>
-            <option value="1">Hombre</option>
-            <option value="2">Mujer</option>
-          </select>
-          <div class="form-floating mb-3 shadow">
-            <input type="number" class="form-control" id="floatingInput">
-            <label for="floatingTextarea p-2">Ingresá acá tu Telefono</label>
-          </div>
-          <div class="form-floating mb-3 shadow">
-            <input type="email" class="form-control" id="floatingInput">
-            <label for="floatingTextarea">Ingresá acá tu Email</label>
-          </div>
-          <div class="form-floating mb-3 shadow">
-            <input type="text" class="form-control" id="floatingInput">
-            <label for="floatingTextarea">
-              <p>Direccion</p>
-            </label>
-          </div>
-          <div class="d-grid gap-2 col-6 mx-auto p-3">
-            <button class="btn btn-primary btn-lg btn-warning shadow destacado" type="submit">REALIZA TU
-              COMPRA</button>
-          </div>
-      </form>
-    </section>
-    <section>
-      <article>
-        <div class="containterr shadow">
-          <div class="redes">
-            <a href="https://www.facebook.com/" target="blanc" class="icon-facebook"></a>
-            <a href="https://www.instagram.com/" target="blanc" class="icon-instagram"></a>
-            <a href="https://www.whatsapp.com/" target="blanc" class="icon-whatsapp"></a>
-          </div>
-        </div>
-      </article>
-    </section>
+        </article>
+      </section>
   </main>
   <footer">
     <div class="container-fluid mt-4">

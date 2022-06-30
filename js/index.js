@@ -1,5 +1,7 @@
 const cont = document.querySelector("#cont");
 
+const detalleDeCompra = document.getElementById('detalleDeCompra')
+
 for (let prod of productos) {
   cont.innerHTML += `
       <div class="col-sm-3">
@@ -14,14 +16,14 @@ for (let prod of productos) {
       </div>
   `
 }
+
 //CARRITO
 
-const cart = [] 
+const cart = []
 
 const aCarrito = document.getElementsByClassName(`aCarrito`)
 
 const totalPP = document.getElementById(`total`)
-
 
 for (let p of aCarrito) {
 
@@ -33,25 +35,30 @@ for (let p of aCarrito) {
 
     renderCart();
 
-    const total = cart.map((item) => item.precio).reduce((valor1, valor2) => valor1 + valor2, 0) 
-    
+    const total = cart.map((item) => item.precio).reduce((valor1, valor2) => valor1 + valor2, 0)
+
     totalPP.innerText = `EL TOTAL ES: $${total}`;
 
     localStorage.setItem("carrito", JSON.stringify(cart));
 
-
- 
   });
 }
 
+const buttonDeleteCart = document.getElementById(`buttonDeleteCart`)
+
+buttonDeleteCart.onclick = () => {
+  cart.length == 0;
+  console.log(cart)
+}
 
 // LOCAL STORAGE
 
- const storage = JSON.parse(localStorage.getItem("carrito"))
+const storage = JSON.parse(localStorage.getItem("carrito")) 
 
- const detalleDeCompra = document.getElementById('detalleDeCompra')
+storage ? cart = storage : cart = [];
 
- for (let f of storage) {
+
+for (let f of storage) {
 
   const cardCarrito = document.createElement('div');
 
@@ -85,7 +92,6 @@ function findAndAddProd(id) {
 
 //
 
-
 function renderCart() {
 
   detalleDeCompra.innerHTML = '';
@@ -105,8 +111,6 @@ function renderCart() {
   </div>
   `
     detalleDeCompra.appendChild(cardCarrito)
-
-    localStorage.setItem("carrito", JSON.stringify(item));
 
   }
 }
