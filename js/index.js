@@ -21,7 +21,6 @@ for (let prod of productos) {
 
 let cart = []
 
-
 const aCarrito = document.getElementsByClassName(`aCarrito`)
 
 const totalPP = document.getElementById(`total`)
@@ -74,6 +73,9 @@ for (let f of storage) {
 </div>
 </div>
 `
+
+  const total = cart.map((item) => item.precio).reduce((valor1, valor2) => valor1 + valor2, 0)
+  totalPP.innerText = `EL TOTAL ES: $${total}`;
 
   detalleDeCompra.appendChild(cardCarrito)
 
