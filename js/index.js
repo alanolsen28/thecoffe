@@ -46,11 +46,12 @@ for (let p of aCarrito) {
 
 const buttonDeleteCart = document.getElementById(`buttonDeleteCart`)
 
-
-
 buttonDeleteCart.onclick = () => {
-  cart.length == 0;
+  cart = [];
   console.log(cart)
+  detalleDeCompra.innerHTML = '';
+  totalPP.innerText = ``;
+
 }
 
 // LOCAL STORAGE
