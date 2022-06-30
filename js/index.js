@@ -19,7 +19,8 @@ for (let prod of productos) {
 
 //CARRITO
 
-const cart = []
+let cart = []
+
 
 const aCarrito = document.getElementsByClassName(`aCarrito`)
 
@@ -46,6 +47,8 @@ for (let p of aCarrito) {
 
 const buttonDeleteCart = document.getElementById(`buttonDeleteCart`)
 
+
+
 buttonDeleteCart.onclick = () => {
   cart.length == 0;
   console.log(cart)
@@ -53,10 +56,9 @@ buttonDeleteCart.onclick = () => {
 
 // LOCAL STORAGE
 
-const storage = JSON.parse(localStorage.getItem("carrito")) 
+const storage = JSON.parse(localStorage.getItem("carrito"))
 
 storage ? cart = storage : cart = [];
-
 
 for (let f of storage) {
 
@@ -72,9 +74,12 @@ for (let f of storage) {
 </div>
 </div>
 `
+
   detalleDeCompra.appendChild(cardCarrito)
 
 }
+
+
 
 // FUNCIONES DEL CART
 
