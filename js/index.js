@@ -4,6 +4,16 @@ const cont = document.querySelector("#cont");
 
 const detalleDeCompra = document.getElementById('detalleDeCompra')
 
+cont.innerHTML = ` <div class="container-xl m-3">
+<div class = "row text-center">
+<div class= "col-sm-3 strong">
+<h1> PRODCUTOS <h1>
+</div>
+</div>
+</div>
+`
+
+
 for (let prod of productos) {
   cont.innerHTML += `
       <div class="col-sm-3">
@@ -122,5 +132,14 @@ buttonDeleteCart.onclick = () => {
   console.log(cart)
   detalleDeCompra.innerHTML = '';
   totalPP.innerText = ``;
+  showAlert();
+};
 
+
+
+const showAlert = () => {
+  Swal.fire({
+    title: 'BORRASTE TODOS LOS PROCUTOS',
+    icon: 'warning',
+  })
 }
