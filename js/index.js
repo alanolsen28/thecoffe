@@ -53,6 +53,8 @@ for (let p of aCarrito) {
 
     localStorage.setItem("carrito", JSON.stringify(cart));
 
+    showToast();
+
   });
 }
 
@@ -136,10 +138,30 @@ buttonDeleteCart.onclick = () => {
 };
 
 
+// ALERTS
 
 const showAlert = () => {
   Swal.fire({
     title: 'BORRASTE TODOS LOS PROCUTOS',
     icon: 'warning',
   })
+}
+
+
+const showToast = () => {
+  Toastify({
+    text: "AGREGASTE UN PRODUCTO AL CARRITO!",
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "#998774",
+    },
+    onClick: function () {} // Callback after click
+  }).showToast();
+
 }
