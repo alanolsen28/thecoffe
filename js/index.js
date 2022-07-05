@@ -138,8 +138,6 @@ buttonDeleteCart.onclick = () => {
 };
 
 
-// ALERTS
-
 const showAlert = () => {
   Swal.fire({
     title: 'BORRASTE TODOS LOS PROCUTOS',
@@ -150,7 +148,7 @@ const showAlert = () => {
 
 const showToast = () => {
   Toastify({
-    text: "AGREGASTE UN PRODUCTO AL CARRITO!",
+    text: "AGREGASTE UN PRODUCTO AL CARRITO",
     duration: 3000,
     destination: "https://github.com/apvarun/toastify-js",
     newWindow: true,
@@ -159,7 +157,7 @@ const showToast = () => {
     position: "right", // `left`, `center` or `right`
     stopOnFocus: true, // Prevents dismissing of toast on hover
     style: {
-      background: "#998774",
+      background: "linear-gradient(to right, #998774,#413931)",
     },
     onClick: function () {} // Callback after click
   }).showToast();
