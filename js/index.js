@@ -13,10 +13,18 @@ cont.innerHTML = ` <div class="container-xl m-3">
 </div>
 `
 
+fetch("./productos.json")
+.then(productos => productos.json)
+  .then(data => {
+    showProducts(data)})
+  .catch(error => console.error(error))
+ 
 
-for (let prod of productos) {
-  cont.innerHTML += `
-      <div class="col-sm-3">
+  
+function showProducts() {
+  for (let prod of productos ) {
+    cont.innerHTML += `
+  <div class="col-sm-3">
           <div class="card bg-dark text-light m-1">
           <img class="card-img-top" src="${prod.img}" alt="">
           <div class="card-body">
@@ -27,6 +35,7 @@ for (let prod of productos) {
       </div>
       </div>
   `
+  }
 }
 
 //CARRITO
@@ -60,7 +69,7 @@ for (let p of aCarrito) {
 
 // LOCAL STORAGE
 
-const storage = JSON.parse(localStorage.getItem("carrito"))
+const storage = JSON.parse(localStorage.getItem("carrito"));
 
 storage ? cart = storage : cart = [];
 
@@ -69,8 +78,7 @@ for (let f of storage) {
   const cardCarrito = document.createElement('div');
 
   cardCarrito.innerHTML += `
-<div class="col-sm-3">
-    <div class="card bg-light text-dark m-1" style="width: 5rem;">
+    <div class="card bg-light text-dark m-1"style="width: 5rem;">
     <img class="card-img-top" src="${f.img}" alt="">
     <div class="card-body">
      <p class="card-text">$ ${f.precio}</p>
@@ -91,7 +99,7 @@ for (let f of storage) {
 
 function findAndAddProd(id) {
 
-  const produ = productos.find(produ => {
+  const produ = productos.find (produ => {
     return produ.nombre === id;
   })
 
@@ -150,7 +158,6 @@ const showToast = () => {
   Toastify({
     text: "AGREGASTE UN PRODUCTO AL CARRITO",
     duration: 3000,
-    destination: "https://github.com/apvarun/toastify-js",
     newWindow: true,
     close: true,
     gravity: "top", // `top` or `bottom`
