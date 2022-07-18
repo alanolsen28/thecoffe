@@ -13,16 +13,13 @@ cont.innerHTML = ` <div class="container-xl m-3">
 </div>
 `
 
-fetch("./productos.json")
-.then(productos => productos.json)
-  .then(data => {
-    showProducts(data)})
-  .catch(error => console.error(error))
- 
+fetch('./productos.json')
+  .then(response => response.json())
+  .then(data => {productos = data;})
+  .catch(error => console.error(error));
 
-  
-function showProducts() {
-  for (let prod of productos ) {
+
+for (let prod of productos) {
     cont.innerHTML += `
   <div class="col-sm-3">
           <div class="card bg-dark text-light m-1">
@@ -36,7 +33,7 @@ function showProducts() {
       </div>
   `
   }
-}
+
 
 //CARRITO
 
