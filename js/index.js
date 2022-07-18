@@ -13,12 +13,12 @@ cont.innerHTML = ` <div class="container-xl m-3">
 </div>
 `
 
-fetch('./productos.json')
-  .then(response => response.json())
-  .then(data => {productos = data;})
+fetch('./logo.json')
+  .then(response => console.log(response))
+  .then(data => {productos = data})
   .catch(error => console.error(error));
 
-
+ 
 for (let prod of productos) {
     cont.innerHTML += `
   <div class="col-sm-3">
