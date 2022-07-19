@@ -13,10 +13,7 @@ cont.innerHTML = ` <div class="container-xl m-3">
 </div>
 `
 
-
-
-const creatCart = () => {
-  for (let p of productos) {
+const createCart = (p) => {
     cont.innerHTML += `
   <div class="col-sm-3">
           <div class="card bg-dark text-light m-1">
@@ -30,17 +27,16 @@ const creatCart = () => {
       </div>
   `
   }
-}
 
 
 
 fetch('./productos.json')
   .then(response => response.json())
   .then(data => { 
-    creatCart(data)
+    createCart(data)
+    data = productos;
   })
   .catch(error => console.error(error));
-
 
 
 //CARRITO
@@ -108,7 +104,6 @@ function findAndAddProd(id) {
   })
 
   cart.push(produ)
-
   console.log(cart);
 
 }
@@ -174,3 +169,4 @@ const showToast = () => {
   }).showToast();
 
 }
+
