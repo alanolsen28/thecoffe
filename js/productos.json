@@ -1,7 +1,7 @@
 [{
 
     "nombre": "Espresso",
-    "preio": 500,
+    "precio": 500,
     "img": "../imagenes/imagenes_menu/1.jpg"
  },
  {

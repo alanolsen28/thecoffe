@@ -1,4 +1,12 @@
 // PRODUCTOS
+let productos = []
+
+let cart = []
+
+const aCarrito = document.getElementsByClassName(`aCarrito`)
+
+const totalPP = document.getElementById(`total`)
+
 
 const cont = document.querySelector("#cont");
 
@@ -13,59 +21,51 @@ cont.innerHTML = ` <div class="container-xl m-3">
 </div>
 `
 
-const createCart = (p) => {
+fetch('../js/productos.json')
+  .then(response => response.json())
+  .then(data => {
+    productos = data;
+    creatCart();
+  })
+  .catch(error => console.error(error));
+
+
+function creatCart() {
+  for (let prod of productos) {
     cont.innerHTML += `
   <div class="col-sm-3">
           <div class="card bg-dark text-light m-1">
-          <img class="card-img-top" src="${p.img}" alt="">
+          <img class="card-img-top" src="${prod.img}" alt="">
           <div class="card-body">
-          <h5 class="card-title">${p.nombre}</h5>
-           <p class="card-text">$${p.precio }</p>
-           <a class="btn shadow destacado aCarrito" id=${p.nombre}>COMPRAR</a>
+          <h5 class="card-title">${prod.nombre}</h5>
+           <p class="card-text">$${prod.precio }</p>
+           <a class="btn shadow destacado aCarrito" id=${prod.nombre}>COMPRAR</a>
       </div>
       </div>
       </div>
   `
   }
 
+  for (let p of aCarrito) {
 
+    p.addEventListener('click', (e) => {
 
-fetch('./productos.json')
-  .then(response => response.json())
-  .then(data => { 
-    createCart(data)
-    data = productos;
-  })
-  .catch(error => console.error(error));
+      const carritoid = e.target.id;
 
+      findAndAddProd(carritoid);
 
-//CARRITO
+      renderCart();
 
-let cart = []
+      const total = cart.map((item) => item.precio).reduce((valor1, valor2) => valor1 + valor2, 0)
 
-const aCarrito = document.getElementsByClassName(`aCarrito`)
+      totalPP.innerText = `EL TOTAL ES: $${total}`;
 
-const totalPP = document.getElementById(`total`)
+      localStorage.setItem("carrito", JSON.stringify(cart));
 
-for (let p of aCarrito) {
+      showToast();
 
-  p.addEventListener('click', (e) => {
-
-    const carritoid = e.target.id;
-
-    findAndAddProd(carritoid);
-
-    renderCart();
-
-    const total = cart.map((item) => item.precio).reduce((valor1, valor2) => valor1 + valor2, 0)
-
-    totalPP.innerText = `EL TOTAL ES: $${total}`;
-
-    localStorage.setItem("carrito", JSON.stringify(cart));
-
-    showToast();
-
-  });
+    });
+  }
 }
 
 // LOCAL STORAGE
@@ -85,10 +85,11 @@ for (let f of storage) {
      <p class="card-text">$ ${f.precio}</p>
 </div>
 </div>
+</div>
 `
 
   const total = cart.map((item) => item.precio).reduce((valor1, valor2) => valor1 + valor2, 0)
-  totalPP.innerHTML = `EL TOTAL ES: $${total}`;
+  totalPP.innerText = `EL TOTAL ES: $${total}`;
 
   detalleDeCompra.appendChild(cardCarrito)
 
@@ -104,6 +105,7 @@ function findAndAddProd(id) {
   })
 
   cart.push(produ)
+
   console.log(cart);
 
 }
@@ -169,4 +171,3 @@ const showToast = () => {
   }).showToast();
 
 }
-
