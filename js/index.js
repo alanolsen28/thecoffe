@@ -13,26 +13,34 @@ cont.innerHTML = ` <div class="container-xl m-3">
 </div>
 `
 
-fetch('./logo.json')
-  .then(response => console.log(response))
-  .then(data => {productos = data})
-  .catch(error => console.error(error));
 
- 
-for (let prod of productos) {
+
+const creatCart = () => {
+  for (let p of productos) {
     cont.innerHTML += `
   <div class="col-sm-3">
           <div class="card bg-dark text-light m-1">
-          <img class="card-img-top" src="${prod.img}" alt="">
+          <img class="card-img-top" src="${p.img}" alt="">
           <div class="card-body">
-          <h5 class="card-title">${prod.nombre}</h5>
-           <p class="card-text">$${prod.precio }</p>
-           <a class="btn shadow destacado aCarrito" id=${prod.nombre}>COMPRAR</a>
+          <h5 class="card-title">${p.nombre}</h5>
+           <p class="card-text">$${p.precio }</p>
+           <a class="btn shadow destacado aCarrito" id=${p.nombre}>COMPRAR</a>
       </div>
       </div>
       </div>
   `
   }
+}
+
+
+
+fetch('./productos.json')
+  .then(response => response.json())
+  .then(data => { 
+    creatCart(data)
+  })
+  .catch(error => console.error(error));
+
 
 
 //CARRITO
@@ -81,11 +89,10 @@ for (let f of storage) {
      <p class="card-text">$ ${f.precio}</p>
 </div>
 </div>
-</div>
 `
 
   const total = cart.map((item) => item.precio).reduce((valor1, valor2) => valor1 + valor2, 0)
-  totalPP.innerText = `EL TOTAL ES: $${total}`;
+  totalPP.innerHTML = `EL TOTAL ES: $${total}`;
 
   detalleDeCompra.appendChild(cardCarrito)
 
@@ -96,7 +103,7 @@ for (let f of storage) {
 
 function findAndAddProd(id) {
 
-  const produ = productos.find (produ => {
+  const produ = productos.find(produ => {
     return produ.nombre === id;
   })
 
