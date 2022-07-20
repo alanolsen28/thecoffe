@@ -79,7 +79,7 @@ for (let f of cart) {
   const cardCarrito = document.createElement('div');
 
   cardCarrito.innerHTML += `
-    <div class="card bg-light text-dark m-1"style="width: 5rem;">
+    <div class="card bg-light text-dark m-1" style="width: 5rem;">
     <img class="card-img-top" src="${f.img}" alt="">
     <div class="card-body">
      <p class="card-text">$ ${f.precio}</p>
@@ -149,7 +149,7 @@ buttonDeleteCart.onclick = () => {
 
 const showAlert = () => {
   Swal.fire({
-    title: 'BORRASTE TODOS LOS PRODUTOS',
+    title: 'BORRASTE TODOS LOS PRODUCTOS',
     icon: 'warning',
   })
 }
