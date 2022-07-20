@@ -74,7 +74,7 @@ const storage = JSON.parse(localStorage.getItem("carrito"));
 
 storage ? cart = storage : cart = [];
 
-for (let f of storage) {
+for (let f of cart) {
 
   const cardCarrito = document.createElement('div');
 
@@ -149,7 +149,7 @@ buttonDeleteCart.onclick = () => {
 
 const showAlert = () => {
   Swal.fire({
-    title: 'BORRASTE TODOS LOS PROCUTOS',
+    title: 'BORRASTE TODOS LOS PRODUTOS',
     icon: 'warning',
   })
 }
