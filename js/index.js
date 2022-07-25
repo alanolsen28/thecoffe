@@ -7,7 +7,6 @@ const aCarrito = document.getElementsByClassName(`aCarrito`)
 
 const totalPP = document.getElementById(`total`)
 
-
 const cont = document.querySelector("#cont");
 
 const detalleDeCompra = document.getElementById('detalleDeCompra')
@@ -20,6 +19,9 @@ cont.innerHTML = ` <div class="container-xl m-3">
 </div>
 </div>
 `
+
+// Creat Cards
+
 
 fetch('../js/productos.json')
   .then(response => response.json())
@@ -46,6 +48,10 @@ function creatCart() {
   `
   }
 
+
+  // Carrito de compras
+
+
   for (let p of aCarrito) {
 
     p.addEventListener('click', (e) => {
@@ -67,6 +73,7 @@ function creatCart() {
     });
   }
 }
+
 
 // LOCAL STORAGE
 
@@ -147,6 +154,8 @@ buttonDeleteCart.onclick = () => {
 };
 
 
+//
+
 const showAlert = () => {
   Swal.fire({
     title: 'BORRASTE TODOS LOS PRODUCTOS',
@@ -171,3 +180,17 @@ const showToast = () => {
   }).showToast();
 
 }
+
+//ENVIO
+
+const envio = document.querySelector("#envio");
+
+envio.innerHTML = `
+
+<div class= "col-sm-3 strong">
+<h1> ENVÍO <h1>
+</div>
+</div>
+</div>
+`
+
